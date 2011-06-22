@@ -7,6 +7,7 @@
 package com.buscape.java.api;
 
 import com.buscape.java.api.buscape.BuscapeAPI;
+import com.buscape.java.api.lomadee.LomadeeAPI;
 
 /**
  * @brief Interface para acesso às APIs do Grupo BuscaPé.
@@ -38,6 +39,15 @@ public class GrupoBuscape {
 	 */
 	public BuscapeAPI buscape() {
 		return (BuscapeAPI) prepare( new BuscapeAPI() );
+	}
+
+	/**
+	 * @brief API Lomadee
+	 * @details Recupera o objeto de integração com a API do Lomadee.
+	 * @return O objeto que representa a API do Lomadee
+	 */
+	public LomadeeAPI lomadee() {
+		return (LomadeeAPI) prepare( new LomadeeAPI() );
 	}
 
 	private APIInterface prepare( APIInterface apiInterface ) {

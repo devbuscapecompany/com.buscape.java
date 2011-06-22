@@ -12,6 +12,8 @@ import java.util.List;
  * @brief Representação do resultado da chamada de uma operação
  */
 public class Result {
+	private int source;
+	private List<Advertiser> advertiser;
 	private String match;
 	private int totalResultsReturned;
 	private int totalResultsAvailable;
@@ -25,6 +27,13 @@ public class Result {
 	private List<Product> product;
 	private List<Offer> offer;
 	private Seller seller;
+
+	/**
+	 * @return the advertiser
+	 */
+	public final List<Advertiser> getAdvertiser() {
+		return advertiser;
+	}
 
 	/**
 	 * @return the category
@@ -76,6 +85,13 @@ public class Result {
 	}
 
 	/**
+	 * @return the source
+	 */
+	public final int getSource() {
+		return source;
+	}
+
+	/**
 	 * @return the subCategory
 	 */
 	public final List<Category> getSubCategory() {
@@ -115,6 +131,13 @@ public class Result {
 	 */
 	public final int getTotalResultsSellers() {
 		return totalResultsSellers;
+	}
+
+	/**
+	 * @param advertiser the advertiser to set
+	 */
+	public final void setAdvertiser( List<Advertiser> advertiser ) {
+		this.advertiser = advertiser;
 	}
 
 	/**
@@ -171,6 +194,13 @@ public class Result {
 	 */
 	public final void setSeller( Seller seller ) {
 		this.seller = seller;
+	}
+
+	/**
+	 * @param source the source to set
+	 */
+	public final void setSource( int source ) {
+		this.source = source;
 	}
 
 	/**

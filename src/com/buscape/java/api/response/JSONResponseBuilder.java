@@ -22,6 +22,27 @@ public class JSONResponseBuilder extends ResponseBuilder {
 			int i, t;
 			final JSONObject json = new JSONObject( content );
 
+			// Dados existentes apenas nas respostas das operações Lomadee
+			if ( json.has( "source" ) ) {
+				final JSONObject jsonSource = json.getJSONObject( "source" );
+
+				if ( jsonSource.has( "id" ) ) {
+					result.setSource( jsonSource.getInt( "id" ) );
+				}
+			}
+
+			if ( json.has( "advertiser" ) ) {
+				final JSONArray jsonAdvertiserArray = json.getJSONArray( "advertiser" );
+				final List<Advertiser> advertiserList = new ArrayList<Advertiser>();
+
+				for ( i = 0, t = jsonAdvertiserArray.length() ; i < t ; ++i ) {
+					advertiserList.add( parseAdvertiser( jsonAdvertiserArray.getJSONObject( i ).getJSONObject( "advertiser" ) ) );
+				}
+
+				result.setAdvertiser( advertiserList );
+			}
+
+			// Dados comuns nas respostas de operações Lomadee e BuscaPé
 			if ( json.has( "category" ) ) {
 				result.setCategory( parseCategory( json.getJSONObject( "category" ) ) );
 			}
@@ -129,6 +150,15 @@ public class JSONResponseBuilder extends ResponseBuilder {
 		}
 
 		return addressList;
+	}
+
+	private Advertiser parseAdvertiser( JSONObject a ) throws JSONException {
+		final Advertiser advertiser = new Advertiser();
+
+		advertiser.setId( a.getInt( "id" ) );
+		advertiser.setName( a.getString( "name" ) );
+
+		return advertiser;
 	}
 
 	private Category parseCategory( JSONObject c ) throws JSONException {

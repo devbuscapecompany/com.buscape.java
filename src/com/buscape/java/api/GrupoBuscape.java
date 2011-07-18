@@ -6,7 +6,6 @@
  */
 package com.buscape.java.api;
 
-import com.buscape.java.api.buscape.BuscapeAPI;
 import com.buscape.java.api.lomadee.LomadeeAPI;
 
 /**
@@ -30,15 +29,6 @@ public class GrupoBuscape {
 	 */
 	public GrupoBuscape( String applicationId ) {
 		this.applicationId = applicationId;
-	}
-
-	/**
-	 * @brief API BuscaPé
-	 * @details Recupera o objeto de integração com a API do BuscaPé.
-	 * @return O objeto que representa a API do BuscaPé
-	 */
-	public BuscapeAPI buscape() {
-		return (BuscapeAPI) prepare( new BuscapeAPI() );
 	}
 
 	/**

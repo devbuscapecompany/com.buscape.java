@@ -32,8 +32,8 @@ public class BuscapeFindCategoryListOperation extends APIOperation {
 	/**
 	 * @param apiInterface
 	 */
-	public BuscapeFindCategoryListOperation( APIInterface apiInterface ) {
-		super( apiInterface );
+	public BuscapeFindCategoryListOperation(APIInterface apiInterface) {
+		super(apiInterface);
 	}
 
 	/**
@@ -59,17 +59,21 @@ public class BuscapeFindCategoryListOperation extends APIOperation {
 	 * @param categoryId
 	 *            O id da categoria
 	 */
-	public final void setCategoryId( int categoryId ) {
-		setParam( "categoryId" , Integer.toString( categoryId ) );
+	public final BuscapeFindCategoryListOperation setCategoryId(int categoryId) {
+		setParam("categoryId", Integer.toString(categoryId));
 		this.categoryId = categoryId;
+		return this;
+		
 	}
 
 	/**
 	 * @param keyword
 	 *            a palavra chave
 	 */
-	public final void setKeyword( String keyword ) {
-		setParam( "keyword" , keyword );
+	public final BuscapeFindCategoryListOperation setKeyword(String keyword) {
+		setParam("keyword", keyword);
 		this.keyword = keyword;
+		return this;
+		
 	}
 }

@@ -40,7 +40,8 @@ public abstract class APIOperation {
 	public APIOperation( APIInterface apiInterface ) {
 		this.apiInterface = apiInterface;
 		parameters = new HashMap<String , String>();
-		parameters.put( "format" , "json" );
+		parameters.put("format", "json");
+		
 	}
 
 	/**
@@ -155,4 +156,5 @@ public abstract class APIOperation {
 	public final void setParam( String name , String value ) {
 		parameters.put( name , value );
 	}
+	
 }

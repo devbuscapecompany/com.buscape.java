@@ -15,8 +15,8 @@ public class BuscapeTopProductsOperation extends APIOperation {
 	/**
 	 * @param apiInterface
 	 */
-	public BuscapeTopProductsOperation( APIInterface apiInterface ) {
-		super( apiInterface );
+	public BuscapeTopProductsOperation(APIInterface apiInterface) {
+		super(apiInterface);
 	}
 
 	@Override

@@ -18,8 +18,8 @@ public class BuscapeFindProductListOperation extends APIOperation {
 	/**
 	 * @param apiInterface
 	 */
-	public BuscapeFindProductListOperation( APIInterface apiInterface ) {
-		super( apiInterface );
+	public BuscapeFindProductListOperation(APIInterface apiInterface) {
+		super(apiInterface);
 	}
 
 	/**
@@ -44,16 +44,30 @@ public class BuscapeFindProductListOperation extends APIOperation {
 	/**
 	 * @param categoryId O id da categoria
 	 */
-	public final void setCategoryId( int categoryId ) {
-		setParam( "categoryId" , Integer.toString( categoryId ) );
+	public final BuscapeFindProductListOperation setCategoryId(int categoryId) {
+		setParam("categoryId", Integer.toString(categoryId));
 		this.categoryId = categoryId;
+		return this;
+		
 	}
 
 	/**
 	 * @param keyword A palavra chave
 	 */
-	public final void setKeyword( String keyword ) {
-		setParam( "keyword" , keyword );
+	public final BuscapeFindProductListOperation setKeyword(String keyword) {
+		setParam("keyword", keyword);
 		this.keyword = keyword;
+		return this;
+		
 	}
+	
+	/**
+	 * @brief Define a ordenação como menor preço
+	 */
+	public final BuscapeFindProductListOperation sortByPrice() {
+		setParam("sort", "price");
+		return this;
+		
+	}
+	
 }

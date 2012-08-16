@@ -18,8 +18,8 @@ public class BuscapeViewProductDetailsOperation extends APIOperation {
 	/**
 	 * @param apiInterface
 	 */
-	public BuscapeViewProductDetailsOperation( APIInterface apiInterface ) {
-		super( apiInterface );
+	public BuscapeViewProductDetailsOperation(APIInterface apiInterface) {
+		super(apiInterface);
 	}
 
 	@Override
@@ -35,9 +35,12 @@ public class BuscapeViewProductDetailsOperation extends APIOperation {
 	}
 
 	/**
-	 * @param productId the productId to set
+	 * @param productId
+	 *            the productId to set
 	 */
-	public final void setProductId( int productId ) {
+	public final BuscapeViewProductDetailsOperation setProductId(int productId) {
 		this.productId = productId;
+		return this;
+		
 	}
 }

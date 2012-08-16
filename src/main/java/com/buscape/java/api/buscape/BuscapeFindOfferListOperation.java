@@ -20,8 +20,8 @@ public class BuscapeFindOfferListOperation extends APIOperation {
 	/**
 	 * @param apiInterface
 	 */
-	public BuscapeFindOfferListOperation( APIInterface apiInterface ) {
-		super( apiInterface );
+	public BuscapeFindOfferListOperation(APIInterface apiInterface) {
+		super(apiInterface);
 	}
 
 	/**
@@ -61,35 +61,53 @@ public class BuscapeFindOfferListOperation extends APIOperation {
 	 * @param barcode
 	 *            O código de barras
 	 */
-	public final void setBarcode( String barcode ) {
-		setParam( "barcode" , barcode );
+	public final BuscapeFindOfferListOperation setBarcode(String barcode) {
+		setParam("barcode", barcode);
 		this.barcode = barcode;
+		return this;
+
 	}
 
 	/**
 	 * @param categoryId
 	 *            O id da categoria
 	 */
-	public final void setCategoryId( int categoryId ) {
-		setParam( "categoryId" , Integer.toString( categoryId ) );
+	public final BuscapeFindOfferListOperation setCategoryId(int categoryId) {
+		setParam("categoryId", Integer.toString(categoryId));
 		this.categoryId = categoryId;
+		return this;
+		
 	}
 
 	/**
 	 * @param keyword
 	 *            A palavra chave
 	 */
-	public final void setKeyword( String keyword ) {
-		setParam( "keyword" , keyword );
+	public final BuscapeFindOfferListOperation setKeyword(String keyword) {
+		setParam("keyword", keyword);
 		this.keyword = keyword;
+		return this;
+		
 	}
 
 	/**
 	 * @param productId
 	 *            O id do produto
 	 */
-	public final void setProductId( int productId ) {
-		setParam( "productId" , Integer.toString( productId ) );
+	public final BuscapeFindOfferListOperation setProductId(int productId) {
+		setParam("productId", Integer.toString(productId));
 		this.productId = productId;
+		return this;
+		
 	}
+	
+	/**
+	 * @brief Define a ordenação como menor preço
+	 */
+	public final BuscapeFindOfferListOperation sortByPrice() {
+		setParam("sort", "price");
+		return this;
+		
+	}
+	
 }

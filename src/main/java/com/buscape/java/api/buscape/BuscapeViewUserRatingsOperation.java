@@ -35,8 +35,11 @@ public class BuscapeViewUserRatingsOperation extends APIOperation {
 
 	/**
 	 * @param productId the productId to set
+	 * @return 
 	 */
-	public final void setProductId( int productId ) {
+	public final BuscapeViewUserRatingsOperation setProductId( int productId ) {
 		this.productId = productId;
+		return this;
+		
 	}
 }

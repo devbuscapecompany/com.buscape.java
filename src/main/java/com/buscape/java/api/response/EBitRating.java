@@ -11,7 +11,7 @@ package com.buscape.java.api.response;
  */
 public class EBitRating {
 	private int numComments;
-	private double rating;
+	private String rating;
 
 	/**
 	 * @return the numComments
@@ -23,7 +23,7 @@ public class EBitRating {
 	/**
 	 * @return the rating
 	 */
-	public final double getRating() {
+	public final String getRating() {
 		return rating;
 	}
 
@@ -39,7 +39,7 @@ public class EBitRating {
 	 * @param rating
 	 *            the rating to set
 	 */
-	public final void setRating( double rating ) {
+	public final void setRating( String rating ) {
 		this.rating = rating;
 	}
 }

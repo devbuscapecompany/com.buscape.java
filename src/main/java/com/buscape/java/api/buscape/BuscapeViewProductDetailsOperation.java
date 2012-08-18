@@ -39,6 +39,7 @@ public class BuscapeViewProductDetailsOperation extends APIOperation {
 	 * @return 
 	 */
 	public final BuscapeViewProductDetailsOperation setProductId( int productId ) {
+		setParam("productId", Integer.toString(productId));
 		this.productId = productId;
 		return this;
 		

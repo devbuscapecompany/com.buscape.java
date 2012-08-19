@@ -279,7 +279,11 @@ public class JSONResponseBuilder extends ResponseBuilder {
 		offer.setPrice( parsePrice( o.getJSONObject( "price" ) ) );
 		offer.setProductId( o.getInt( "productid" ) );
 		offer.setSeller( parseSeller( o.getJSONObject( "seller" ) ) );
-		offer.setThumbnail( parseThumbnail( o.getJSONObject( "thumbnail" ) ) );
+		
+		if (o.has("thumbnail")) {
+			offer.setThumbnail( parseThumbnail( o.getJSONObject( "thumbnail" ) ) );
+			
+		}
 
 		return offer;
 	}

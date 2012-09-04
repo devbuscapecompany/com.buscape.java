@@ -43,7 +43,7 @@ public class BuscapeFindProductListOperation extends APIOperation {
 
 	/**
 	 * @param categoryId O id da categoria
-	 * @return 
+	 * @return Interface fluente BuscapeFindProductListOperation 
 	 */
 	public final BuscapeFindProductListOperation setCategoryId( int categoryId ) {
 		setParam( "categoryId" , Integer.toString( categoryId ) );
@@ -54,7 +54,7 @@ public class BuscapeFindProductListOperation extends APIOperation {
 
 	/**
 	 * @param keyword A palavra chave
-	 * @return 
+	 * @return Interface fluente BuscapeFindProductListOperation 
 	 */
 	public final BuscapeFindProductListOperation setKeyword( String keyword ) {
 		setParam( "keyword" , keyword );
@@ -65,6 +65,7 @@ public class BuscapeFindProductListOperation extends APIOperation {
 	
 	/**
 	 * @brief Define a ordenação como menor preço
+	 * @return Interface fluente BuscapeFindProductListOperation
 	 */
 	public BuscapeFindProductListOperation sortByPrice() {
 		setParam("sort", "price");

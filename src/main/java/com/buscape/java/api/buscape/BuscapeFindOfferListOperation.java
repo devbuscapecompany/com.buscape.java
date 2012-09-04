@@ -60,7 +60,7 @@ public class BuscapeFindOfferListOperation extends APIOperation {
 	/**
 	 * @param barcode
 	 *            O código de barras
-	 * @return 
+	 * @return Interface fluente BuscapeFindOfferListOperation 
 	 */
 	public final BuscapeFindOfferListOperation setBarcode( String barcode ) {
 		setParam( "barcode" , barcode );
@@ -72,7 +72,7 @@ public class BuscapeFindOfferListOperation extends APIOperation {
 	/**
 	 * @param categoryId
 	 *            O id da categoria
-	 * @return 
+	 * @return Interface fluente BuscapeFindOfferListOperation 
 	 */
 	public final BuscapeFindOfferListOperation setCategoryId( int categoryId ) {
 		setParam( "categoryId" , Integer.toString( categoryId ) );
@@ -84,7 +84,7 @@ public class BuscapeFindOfferListOperation extends APIOperation {
 	/**
 	 * @param keyword
 	 *            A palavra chave
-	 * @return 
+	 * @return Interface fluente BuscapeFindOfferListOperation 
 	 */
 	public final BuscapeFindOfferListOperation setKeyword( String keyword ) {
 		setParam( "keyword" , keyword );
@@ -106,6 +106,7 @@ public class BuscapeFindOfferListOperation extends APIOperation {
 	
 	/**
 	 * @brief Define a ordenação como menor preço
+	 * @return Interface fluente BuscapeFindOfferListOperation
 	 */
 	public BuscapeFindOfferListOperation sortByPrice() {
 		setParam("sort", "price");

@@ -36,7 +36,7 @@ public class BuscapeViewSellerDetailsOperation extends APIOperation {
 
 	/**
 	 * @param sellerId the sellerId to set
-	 * @return 
+	 * @return Interface fluente BuscapeViewSellerDetailsOperation 
 	 */
 	public final BuscapeViewSellerDetailsOperation setSellerId( int sellerId ) {
 		this.sellerId = sellerId;

@@ -58,7 +58,7 @@ public class BuscapeFindCategoryListOperation extends APIOperation {
 	/**
 	 * @param categoryId
 	 *            O id da categoria
-	 * @return 
+	 * @return Interface fluente BuscapeFindCategoryListOperation 
 	 */
 	public final BuscapeFindCategoryListOperation setCategoryId( int categoryId ) {
 		setParam( "categoryId" , Integer.toString( categoryId ) );
@@ -70,7 +70,7 @@ public class BuscapeFindCategoryListOperation extends APIOperation {
 	/**
 	 * @param keyword
 	 *            a palavra chave
-	 * @return 
+	 * @return Interface fluente BuscapeFindCategoryListOperation 
 	 */
 	public final BuscapeFindCategoryListOperation setKeyword( String keyword ) {
 		setParam( "keyword" , keyword );

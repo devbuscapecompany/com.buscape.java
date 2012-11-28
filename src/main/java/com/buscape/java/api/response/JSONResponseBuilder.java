@@ -182,7 +182,7 @@ public class JSONResponseBuilder extends ResponseBuilder {
 		final List<Contact> contactList = new ArrayList<Contact>();
 
 		for ( int i = 0, t = contacts.length() ; i < t ; ++i ) {
-			final JSONObject jsonContact = contacts.getJSONObject( i );
+			final JSONObject jsonContact = contacts.getJSONObject( i ).getJSONObject("contact");
 
 			final Contact contact = new Contact();
 			contact.setLabel( jsonContact.getString( "label" ) );
@@ -197,8 +197,17 @@ public class JSONResponseBuilder extends ResponseBuilder {
 	private void parseDetails( JSONObject d ) throws JSONException {
 		final ResultDetails resultDetails = new ResultDetails();
 		resultDetails.setApplicationId( d.getString( "applicationid" ) );
-		resultDetails.setApplicationPath( d.getString( "applicationpath" ) );
-		resultDetails.setApplicationVersion( d.getString( "applicationversion" ) );
+		
+		if (d.has("applicationpath")) {
+			resultDetails.setApplicationPath( d.getString( "applicationpath" ) );
+			
+		}
+		
+		if (d.has("applicationversion")) {
+			resultDetails.setApplicationVersion( d.getString( "applicationversion" ) );
+			
+		}
+		
 		resultDetails.setCode( d.getInt( "code" ) );
 		/*
 		 * resultDetails->setDate( mktime( $d->date->hour, $d->date->minute,
@@ -215,7 +224,7 @@ public class JSONResponseBuilder extends ResponseBuilder {
 		final EBitRating eBitRating = new EBitRating();
 
 		eBitRating.setNumComments( e.getInt( "numcomments" ) );
-		eBitRating.setRating( e.getDouble( "rating" ) );
+		eBitRating.setRating( e.getString( "rating" ) );
 
 		return eBitRating;
 	}
@@ -270,7 +279,11 @@ public class JSONResponseBuilder extends ResponseBuilder {
 		offer.setPrice( parsePrice( o.getJSONObject( "price" ) ) );
 		offer.setProductId( o.getInt( "productid" ) );
 		offer.setSeller( parseSeller( o.getJSONObject( "seller" ) ) );
-		offer.setThumbnail( parseThumbnail( o.getJSONObject( "thumbnail" ) ) );
+		
+		if (o.has("thumbnail")) {
+			offer.setThumbnail( parseThumbnail( o.getJSONObject( "thumbnail" ) ) );
+			
+		}
 
 		return offer;
 	}
@@ -359,7 +372,11 @@ public class JSONResponseBuilder extends ResponseBuilder {
 			seller.setAddresses( parseAddresses( s.getJSONArray( "addresses" ) ) );
 		}
 
-		seller.setContacts( parseContacts( s.getJSONArray( "contacts" ) ) );
+		if (s.has("contacts")) {
+			seller.setContacts( parseContacts( s.getJSONArray( "contacts" ) ) );
+
+		}
+		
 		// seller.setCoupon(coupon)
 		seller.setDigitalPayment( s.getBoolean( "pagamentodigital" ) );
 		// seller.setExtra( s.->extra );
@@ -377,7 +394,10 @@ public class JSONResponseBuilder extends ResponseBuilder {
 		final Specification specification = new Specification();
 		final JSONArray jsonItemArray = s.getJSONArray( "item" );
 
-		specification.setLinks( parseLinks( s.getJSONArray( "links" ) ) );
+		if (s.has("links")){
+			specification.setLinks( parseLinks( s.getJSONArray( "links" ) ) );
+			
+		}
 
 		for ( int i = 0, t = jsonItemArray.length() ; i < t ; ++i ) {
 			specification.addItem( parseItem( jsonItemArray.getJSONObject( i ).getJSONObject( "item" ) ) );
